@@ -30,3 +30,10 @@
 # OS junk
 **/.DS_Store
 **/Thumbs.db
+
+# 2026-05-19: un-ignore unity-mcp's Editor/Tools/Build/ source folder.
+# The generic **/Build/ rule above was intended for Unity project build
+# output, but the unity-mcp package happens to have a "Build" subdirectory
+# of C# source. Without these negations BuildJob.cs etc never get committed.
+!**/Packages/com.coplaydev.unity-mcp/Editor/Tools/Build/
+!**/Packages/com.coplaydev.unity-mcp/Editor/Tools/Build/**
